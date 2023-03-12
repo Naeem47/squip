@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:squip/firebase_options.dart';
+import 'package:squip/screens/home.dart';
 import 'package:squip/screens/signup.dart';
 import 'package:squip/screens/splash.dart';
 import 'package:squip/screens/login.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(useMaterial3: true, fontFamily: 'Urbanist'),
-        home: REGISTER(),
+        home:  Splash(),
       ),
     );
   }

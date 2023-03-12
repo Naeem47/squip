@@ -26,12 +26,8 @@ class Textconstants {
   // button text 
    static String login  = "Login";
    static String register  = "Register";
-   static String registerasservice  = "Register as Service provider";
-   static String registerasuser  = "Register as User";
 
-  // commercial
-  static String commercial  = "Product By\n Jawan Pakistan  "; 
-
+  
 
 
 }

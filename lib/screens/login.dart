@@ -19,107 +19,89 @@ class LOGINVIEW extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Consumer<UserLoginProvider>(
-          builder: (context, value, child) => Padding(
-            padding: const EdgeInsets.only(
-              top: 40,
-              left: 22,
-              right: 22,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const ICONBUTTON(),
-                const SizedBox(
-                  height: 22,
-                ),
-                Text(
-                  Textconstants.logintext,
-                  style: GoogleFonts.urbanist(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 30,
+        body: SingleChildScrollView(
+          child: Consumer<UserLoginProvider>(
+            builder: (context, value, child) => Padding(
+              padding: const EdgeInsets.only(
+                top: 40,
+                left: 22,
+                right: 22,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const ICONBUTTON(),
+                  const SizedBox(
+                    height: 22,
                   ),
-                ),
-                const SizedBox(
-                  height: 32,
-                ),
-                TEXTFIELD(controller: value.email, text: Textconstants.textfieldtxt),
-                const SizedBox(
-                  height: 15,
-                ),
-                TEXTFIELD(controller: value.password, text: Textconstants.textfieldtxt1),
-                const SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 210,
-                  ),
-                  child: TEXTBUTTON(
-                    onpressed: () {},
-                    text: Textconstants.foregtpassword,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Mainbutton(
-                  onpressed: (){
-                    value.login(context);
-                  },
-                  text: Textconstants.login,
-                ),
-                const SizedBox(
-                  height: 18,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      Textconstants.logintext1,
-                      style: GoogleFonts.urbanist(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    TEXTBUTTON(
-                        onpressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return REGISTER();
-                              },
-                            ),
-                          );
-                        },
-                        text: Textconstants.registernow),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Divider(
-                  height: 1,
-                  color: ColorConstant.black,
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 100,
-                    right: 100,
-                  ),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    Textconstants.commercial,
+                  Text(
+                    Textconstants.logintext,
                     style: GoogleFonts.urbanist(
-                      fontSize: 15,
                       fontWeight: FontWeight.w700,
+                      fontSize: 30,
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  TEXTFIELD(controller: value.email, text: Textconstants.textfieldtxt),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TEXTFIELD(controller: value.password, text: Textconstants.textfieldtxt1),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 210,
+                    ),
+                    child: TEXTBUTTON(
+                      onpressed: () {},
+                      text: Textconstants.foregtpassword,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Mainbutton(
+                    onpressed: (){
+                      value.login(context);
+                    },
+                    text: Textconstants.login,
+                  ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        Textconstants.logintext1,
+                        style: GoogleFonts.urbanist(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      TEXTBUTTON(
+                          onpressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return REGISTER();
+                                },
+                              ),
+                            );
+                          },
+                          text: Textconstants.registernow),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                 
+                ],
+              ),
             ),
           ),
         ),

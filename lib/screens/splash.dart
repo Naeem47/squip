@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:squip/constants/color_constant.dart';
+import 'package:squip/screens/login.dart';
 import 'package:squip/screens/signup.dart';
 import 'package:squip/viewmodel/splash_provider.dart';
 import 'package:squip/widgets/mainbutton.dart';
 import 'package:squip/constants/Texts.dart';
 
 class Splash extends StatelessWidget {
-  TextEditingController controller = TextEditingController();
   Splash({super.key});
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +54,10 @@ class Splash extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => REGISTER(),
+                                      builder: (context) => const LOGINVIEW(),
                                     ));
                               },
-                              text: Textconstants.registerasservice),
+                              text: Textconstants.login),
                           const SizedBox(
                             height: 20,
                           ),
@@ -68,7 +69,7 @@ class Splash extends StatelessWidget {
                                       builder: (context) => REGISTER(),
                                     ));
                               },
-                              text: Textconstants.registerasuser),
+                              text: Textconstants.register),
                         ],
                       ),
                     ),
