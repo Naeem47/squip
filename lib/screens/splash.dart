@@ -54,7 +54,7 @@ class Splash extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const LOGINVIEW(),
+                                      builder: (context) =>  LOGINVIEW(),
                                     ));
                               },
                               text: Textconstants.login),

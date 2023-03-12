@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants/color_constant.dart';
 import '../screens/login.dart';
 
+
 enum UserType {
   user,
   ambulance,
@@ -21,7 +22,7 @@ class RoleRegisterProvider with ChangeNotifier {
   TextEditingController password = TextEditingController();
 
   final CollectionReference users =
-      FirebaseFirestore.instance.collection('Users');
+      FirebaseFirestore.instance.collection('users');
 
   //  void adduser(){
 
@@ -56,7 +57,7 @@ class RoleRegisterProvider with ChangeNotifier {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const LOGINVIEW(),
+            builder: (context) =>  LOGINVIEW(),
           ));
     } on FirebaseAuthException catch (e) {
       return showDialog(

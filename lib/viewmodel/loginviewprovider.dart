@@ -15,12 +15,11 @@ class UserLoginProvider extends ChangeNotifier {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
-  route(context,) {
-    final CollectionReference users = FirebaseFirestore.instance.collection('users');
-   final  User? user = FirebaseAuth.instance.currentUser;
-    var kk = FirebaseFirestore.instance
-            .collection('users')
-           .doc( user!.uid)
+  void route(context,) async{
+    final CollectionReference Reference = FirebaseFirestore.instance.collection('users');
+   final   user = FirebaseAuth.instance.currentUser!.uid.toString();
+    var kk = await Reference
+           .doc(user)
             .get()
             .then((DocumentSnapshot documentSnapshot) {
       if (!documentSnapshot.exists ) {

@@ -6,15 +6,17 @@ import 'package:squip/constants/color_constant.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TEXTFIELD extends StatelessWidget {
-  const TEXTFIELD({super.key,required this. controller,required this.text});
+  const TEXTFIELD({super.key,required this. controller,required this.text,required this.validator});
 
   final TextEditingController controller;
   final String text;
+  final validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      
       decoration: InputDecoration(
 
         enabledBorder: OutlineInputBorder(
@@ -37,6 +39,8 @@ class TEXTFIELD extends StatelessWidget {
         hintText: text,
         hintStyle: GoogleFonts.urbanist(),
       ),
-    );
+       validator: validator,
+                  );
+    
   }
 }
